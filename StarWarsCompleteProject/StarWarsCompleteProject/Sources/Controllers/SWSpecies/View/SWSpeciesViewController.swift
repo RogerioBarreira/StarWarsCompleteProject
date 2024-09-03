@@ -1,5 +1,5 @@
 //
-//  SWPlanetsViewController.swift
+//  SWSpeciesViewController.swift
 //  StarWarsCompleteProject
 //
 //  Created by Rogerio Martins Barreira on 03/09/24.
@@ -7,20 +7,20 @@
 
 import UIKit
 
-class SWPlanetsViewController: UIViewController {
+class SWSpeciesViewController: UIViewController {
     
-    lazy var viewSWPlanets: SWPlanetsView = {
-        let view = SWPlanetsView()
+    lazy var viewSWSpecies: SWSpeciesView = {
+        let view = SWSpeciesView()
         return view
     }()
     
     override func loadView() {
         super.loadView()
-        self.view = viewSWPlanets
+        self.view = viewSWSpecies
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Planets"
+        self.title = "Species"
     }
 }
