@@ -14,6 +14,8 @@ class SWPeopleViewController: UIViewController {
         return view
     }()
     
+    let viewModel = SWPeopleViewModel()
+    
     override func loadView() {
         super.loadView()
         self.view = viewSWPeople
@@ -22,5 +24,19 @@ class SWPeopleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Peoples"
+        setupRequest()
+    }
+    
+    private func setupRequest() {
+        viewModel.requestSWPeopleViewModel { [weak self] result in
+            guard let self else { return }
+            switch result {
+            case .success(let success):
+                
+                print(success)
+            case .failure(let failure):
+                print(failure.localizedDescription)
+            }
+        }
     }
 }
